@@ -16,6 +16,7 @@ const App = () => {
   const [good, setGood] = useState(0)
   const [bad, setBad] = useState(0)
   const [neutral, setNeutral] = useState(0)
+  const [all, setAll] = useState(0)
   const title = "Give feedback"
   const goodButtonTitle = "good"
   const badButtonTitle = "bad"
@@ -23,14 +24,20 @@ const App = () => {
   const statisticsHeader = "Statistics"
   const handleGoodState = () => {
     const newGood = good + 1
+    const newAll = all + 1
+    setAll(newAll)
     setGood(newGood)
   }
   const handleBadState = () => {
     const newBad = bad + 1
+    const newAll = all + 1
+    setAll(newAll)
     setBad(newBad)
   }
   const handleNeutralState = () => {
     const newNeutral = neutral + 1
+    const newAll = all + 1
+    setAll(newAll)
     setNeutral(newNeutral)
   }
   return (
@@ -43,6 +50,7 @@ const App = () => {
       <Display text="Good" state={good}/>
       <Display text="Bad" state={bad}/>
       <Display text="Neutral" state={neutral}/>
+      <Display text="All" state={all}/>
     </div>
   )
   
